@@ -1,2 +1,2 @@
-# C-Memory-Allocator
-A memory allocator in C
+# C-Memory-Pool-Allocator
+A memory pool allocator in C
