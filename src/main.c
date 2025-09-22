@@ -13,7 +13,20 @@ typedef struct {
     unsigned char pool[POOL_SIZE];
 }MemoryPool;
 
-int main(){
+void initMemoryPool(MemoryPool *pool){
+    pool->freelist = (Block *)pool->pool;
+    Block *current = pool->freelist;
 
+    for (int i = 0; i < (POOL_SIZE / sizeof(Block)) -1; i++){
+        current->next = (Block *)((unsigned char *)current + sizeof(Block));
+        current = current->next;
+    }
+
+    current->next = NULL;
+}
+
+
+int main(){
+    
 
 }
